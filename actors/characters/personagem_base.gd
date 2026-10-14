@@ -5,6 +5,9 @@ class_name PersonagemBase
 const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
 
+enum Characters { 
+	egg_boy = 0, hunter = 1, mask_racoon = 2, robot_camouflage = 3
+}
 var _prefixo_animacao: String = "_b"
 var _can_attack: bool = true
 var _attacking: bool = false 
@@ -12,9 +15,18 @@ var _attack_type: String = ""
 
 @export_category("Objects")
 @export var _animador: AnimationPlayer
+@export var _texture: Sprite2D
 
-func _physics_process(delta: float) -> void:
+@export_category("Variables")
+@export var _selected_character: Characters
+@export var _character_code: Array[String]
+
+func _ready() -> void:
+	_texture.texture = load(
+		"res://actors/characters/" + _character_code[_selected_character] + "/spritesheet.png"
+	)
 	
+func _physics_process(delta: float) -> void:
 	var direction: Vector2 = Input.get_vector(
 		"mover_e", "mover_d", "mover_c",  "mover_b"
 	)
