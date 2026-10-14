@@ -6,6 +6,9 @@ const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
 
 var _prefixo_animacao: String = "_b"
+var _can_attack: bool = true
+var _attacking: bool = false 
+var _attack_type: String = ""
 
 @export_category("Objects")
 @export var _animador: AnimationPlayer
@@ -30,29 +33,39 @@ func _physics_process(delta: float) -> void:
 	
 	velocity = direction * SPEED
 	move_and_slide()
+		
+	if _can_attack:
+		if Input.is_action_just_pressed("ataque"):
+			_attack_type = "ataque"
+		elif Input.is_action_just_pressed("ataque_especial_1"):
+			_attack_type = "ataque_especial_1"
+		elif Input.is_action_just_pressed("ataque_especial_2"):
+			_attack_type = "ataque_especial_2"
+		else: 
+			_attack_type = ""
+		
+		if _attack_type != "":
+			_can_attack = false
+			_attacking = true
+			set_physics_process(false)	
 	
 	_animar()
-	
-	# Add the gravity.
-	#if not is_on_floor():
-	#	velocity += get_gravity() * delta
-
-	# Handle jump.
-	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-	#	velocity.y = JUMP_VELOCITY
-#
-	## Get the input direction and handle the movement/deceleration.
-	## As good practice, you should replace UI actions with custom gameplay actions.
-	#var direction := Input.get_axis("ui_left", "ui_right")
-	#if direction:
-	#	velocity.x = direction * SPEED
-	#else:
-	#	velocity.x = move_toward(velocity.x, 0, SPEED)
-#
-	#move_and_slide()
 
 func _animar() -> void:
-	if velocity == Vector2.ZERO:
+	if _attacking == true:
+		if _attack_type == "ataque":
+			_animador.play("ataque" + _prefixo_animacao)
+		else:
+			_animador.play(_attack_type)
+	elif velocity == Vector2.ZERO:
 		_animador.play("parado" + _prefixo_animacao)
 	elif velocity != Vector2.ZERO:
 		_animador.play("andando" + _prefixo_animacao)
+
+
+func _when_animation_finished(_anim_name: StringName) -> void:
+	if _anim_name.contains("ataque"):
+		_attacking = false 
+		_can_attack = true
+		set_physics_process(true)
+		pass # Replace with function body.

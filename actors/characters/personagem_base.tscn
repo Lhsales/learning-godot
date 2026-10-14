@@ -92,7 +92,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_ggogo"]
 resource_name = "ataque_b"
-length = 0.19999999999999998
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -108,7 +108,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_acj01"]
 resource_name = "ataque_c"
-length = 0.19999999999999998
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -124,7 +124,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_0pm0o"]
 resource_name = "ataque_d"
-length = 0.19999999999999998
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -140,7 +140,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_qjes1"]
 resource_name = "ataque_e"
-length = 0.19999999999999998
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -156,7 +156,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_xssfo"]
 resource_name = "ataque_especial_1"
-length = 0.19999999999999998
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -172,7 +172,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_5lqu4"]
 resource_name = "ataque_especial_2"
-length = 0.19999999999999998
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -188,7 +188,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_qouho"]
 resource_name = "morrendo"
-length = 0.19999999999999998
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -204,7 +204,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_eaol1"]
 resource_name = "parado_b"
-length = 0.19999999999999998
+length = 0.2
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -221,7 +221,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_4fboh"]
 resource_name = "parado_c"
-length = 0.19999999999999998
+length = 0.2
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -238,7 +238,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_w3kw3"]
 resource_name = "parado_d"
-length = 0.19999999999999998
+length = 0.2
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -255,7 +255,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_ptt5h"]
 resource_name = "parado_e"
-length = 0.19999999999999998
+length = 0.2
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -272,7 +272,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_sw53n"]
 resource_name = "pegando_item"
-length = 0.19999999999999998
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -288,7 +288,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_1raxg"]
 resource_name = "pulo_b"
-length = 0.19999999999999998
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -304,7 +304,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_l0em3"]
 resource_name = "pulo_c"
-length = 0.19999999999999998
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -320,7 +320,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_l8cla"]
 resource_name = "pulo_d"
-length = 0.19999999999999998
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -336,7 +336,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_jddvw"]
 resource_name = "pulo_e"
-length = 0.19999999999999998
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -389,3 +389,5 @@ vframes = 7
 
 [node name="Animador" type="AnimationPlayer" parent="." unique_id=1353457136]
 libraries/ = SubResource("AnimationLibrary_wh2ms")
+
+[connection signal="animation_finished" from="Animador" to="." method="_when_animation_finished"]
