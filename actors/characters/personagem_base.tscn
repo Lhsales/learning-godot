@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://00jepbum3s78" path="res://actors/characters/personagem_base.gd" id="1_k3xxx"]
 [ext_resource type="Texture2D" uid="uid://cnwmdbvqfj6gg" path="res://actors/characters/egg_boy/spritesheet.png" id="2_rt6go"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3xxx"]
+size = Vector2(14, 15)
+
 [sub_resource type="Animation" id="Animation_oudk8"]
 length = 0.001
 tracks/0/type = "value"
@@ -383,12 +386,15 @@ _selected_character = 2
 _character_code = Array[String](["egg_boy", "hunter", "mask_racoon", "robot_camouflage"])
 
 [node name="Textura" type="Sprite2D" parent="." unique_id=1843407467]
-position = Vector2(39, 72)
+texture_filter = 1
 texture = ExtResource("2_rt6go")
 hframes = 4
 vframes = 7
 
 [node name="Colisor" type="CollisionShape2D" parent="." unique_id=429046418]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_k3xxx")
+debug_color = Color(0.83137256, 0.34901962, 0.6313726, 0.41960785)
 
 [node name="Animador" type="AnimationPlayer" parent="." unique_id=1353457136]
 libraries/ = SubResource("AnimationLibrary_wh2ms")
