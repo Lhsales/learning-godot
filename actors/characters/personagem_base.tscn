@@ -393,4 +393,6 @@ vframes = 7
 [node name="Animador" type="AnimationPlayer" parent="." unique_id=1353457136]
 libraries/ = SubResource("AnimationLibrary_wh2ms")
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=997759240]
+
 [connection signal="animation_finished" from="Animador" to="." method="_when_animation_finished"]
