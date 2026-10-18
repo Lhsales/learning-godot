@@ -26,7 +26,7 @@ func _ready() -> void:
 		"res://actors/characters/" + _character_code[_selected_character] + "/spritesheet.png"
 	)
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var direction: Vector2 = Input.get_vector(
 		"mover_e", "mover_d", "mover_c",  "mover_b"
 	)
